@@ -1,0 +1,785 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Isaque Gueiros | Portfólio de Marketing</title>
+
+  <meta name="description" content="Portfólio profissional de Isaque Gueiros — Marketing, análise de dados, comunicação e organização comercial.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f5f3ef;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(245, 243, 239, 0.92);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid #ddd9d2;
+    }
+
+    .nav-content {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .nav-links a:hover {
+      color: #000;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 72px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 22px;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 0.98;
+      letter-spacing: -5px;
+      margin-bottom: 28px;
+      font-weight: 750;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      font-size: 19px;
+      color: #5f5f5f;
+      margin-bottom: 38px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+
+    .button-dark {
+      background: #171717;
+      color: white;
+    }
+
+    .button-dark:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    .button-light {
+      border: 1px solid #cfcac2;
+      background: transparent;
+    }
+
+    .button-light:hover {
+      background: white;
+    }
+
+    /* ABOUT */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 52px);
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-text {
+      color: #606060;
+      font-size: 17px;
+      max-width: 560px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      border: 1px solid #d4d0c9;
+      padding: 10px 14px;
+      border-radius: 4px;
+      font-size: 13px;
+      background: #faf9f7;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      background: #171717;
+      color: white;
+    }
+
+    .projects .section-label {
+      color: #999;
+    }
+
+    .projects .section-title {
+      color: white;
+    }
+
+    .projects-intro {
+      max-width: 620px;
+      color: #aaa;
+      margin-bottom: 55px;
+      font-size: 16px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project-card {
+      background: #222;
+      border: 1px solid #333;
+      padding: 30px;
+      min-height: 390px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: #555;
+    }
+
+    .project-number {
+      font-size: 12px;
+      color: #888;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+    }
+
+    .project-card h3 {
+      font-size: 25px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .project-card p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    .project-link {
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      border-bottom: 1px solid #666;
+      padding-bottom: 6px;
+      display: inline-block;
+    }
+
+    .project-link:hover {
+      border-color: white;
+    }
+
+    /* DETAILS */
+
+    .details {
+      background: #f5f3ef;
+    }
+
+    .detail-list {
+      border-top: 1px solid #d6d2cb;
+    }
+
+    .detail-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 40px;
+      padding: 28px 0;
+      border-bottom: 1px solid #d6d2cb;
+    }
+
+    .detail-item strong {
+      font-size: 14px;
+    }
+
+    .detail-item p {
+      color: #666;
+      max-width: 700px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #e8e4dd;
+      text-align: center;
+    }
+
+    .contact-content {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact h2 {
+      font-size: clamp(38px, 6vw, 65px);
+      letter-spacing: -3px;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .contact p {
+      color: #666;
+      margin-bottom: 32px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #171717;
+      color: #888;
+      padding: 28px 0;
+      font-size: 12px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .hero-description {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        min-height: 330px;
+      }
+
+      .detail-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="container nav-content">
+
+      <div class="logo">
+        Isaque Gueiros
+      </div>
+
+      <div class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#competencias">Competências</a>
+        <a href="#contato">Contato</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Portfólio de Marketing
+        </div>
+
+        <h1>
+          Estratégia,<br>
+          comunicação<br>
+          e dados.
+        </h1>
+
+        <p class="hero-description">
+          Projetos desenvolvidos com foco em marketing,
+          organização comercial, análise de dados e comunicação.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#projetos" class="button button-dark">
+            Ver projetos
+          </a>
+
+          <a href="mailto:gueirosisaque@gmail.com"
+             class="button button-light">
+            Entrar em contato
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- SOBRE -->
+
+  <section id="sobre">
+
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div>
+
+          <div class="section-label">
+            Sobre
+          </div>
+
+          <h2 class="section-title">
+            Marketing com visão analítica.
+          </h2>
+
+        </div>
+
+        <div>
+
+          <p class="about-text">
+            Sou formado em Análise e Desenvolvimento de Sistemas,
+            com interesse em marketing, negócios, tecnologia e análise
+            de informações.
+            <br><br>
+            Desenvolvo projetos que conectam comunicação,
+            organização e dados para apoiar decisões e resultados
+            de negócio.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJETOS -->
+
+  <section id="projetos" class="projects">
+
+    <div class="container">
+
+      <div class="section-label">
+        Projetos selecionados
+      </div>
+
+      <h2 class="section-title">
+        Trabalhos desenvolvidos.
+      </h2>
+
+      <p class="projects-intro">
+        Uma seleção de projetos de portfólio envolvendo campanhas,
+        materiais comerciais e análise de dados.
+      </p>
+
+
+      <div class="project-grid">
+
+
+        <!-- PROJETO 01 -->
+
+        <article class="project-card">
+
+          <div>
+
+            <div class="project-number">
+              01 / CAMPANHA
+            </div>
+
+            <h3>
+              Campanha de Lançamento
+            </h3>
+
+            <p>
+              Planejamento e estruturação de uma campanha de marketing
+              para lançamento de empreendimento imobiliário.
+            </p>
+
+          </div>
+
+          <a
+            href="01-campanha-lancamento/"
+            class="project-link">
+            Ver projeto →
+          </a>
+
+        </article>
+
+
+        <!-- PROJETO 02 -->
+
+        <article class="project-card">
+
+          <div>
+
+            <div class="project-number">
+              02 / COMERCIAL
+            </div>
+
+            <h3>
+              Kit de Apoio Comercial
+            </h3>
+
+            <p>
+              Desenvolvimento de materiais para apresentação,
+              organização comercial e apoio à equipe de vendas.
+            </p>
+
+          </div>
+
+          <div>
+
+            <a
+              href="02-kit-comercial/"
+              class="project-link">
+              Ver projeto →
+            </a>
+
+            <br><br>
+
+            <a
+              href="02-kit-comercial/apresentacao-comercial.pdf"
+              target="_blank"
+              class="project-link">
+              Abrir apresentação PDF →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- PROJETO 03 -->
+
+        <article class="project-card">
+
+          <div>
+
+            <div class="project-number">
+              03 / DADOS
+            </div>
+
+            <h3>
+              Dashboard de Leads
+            </h3>
+
+            <p>
+              Organização e análise de dados de leads,
+              acompanhamento do funil comercial e indicadores
+              de conversão.
+            </p>
+
+          </div>
+
+          <div>
+
+            <a
+              href="03-dashboard-leads/"
+              class="project-link">
+              Ver projeto →
+            </a>
+
+            <br><br>
+
+            <a
+              href="03-dashboard-leads/dados-leads.xlsx"
+              class="project-link">
+              Abrir planilha →
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- COMPETÊNCIAS -->
+
+  <section id="competencias" class="details">
+
+    <div class="container">
+
+      <div class="section-label">
+        Competências
+      </div>
+
+      <h2 class="section-title">
+        Ferramentas e conhecimentos.
+      </h2>
+
+      <div class="detail-list">
+
+        <div class="detail-item">
+
+          <strong>
+            Marketing
+          </strong>
+
+          <p>
+            Planejamento de campanhas, comunicação,
+            materiais comerciais e organização de projetos.
+          </p>
+
+        </div>
+
+
+        <div class="detail-item">
+
+          <strong>
+            Dados
+          </strong>
+
+          <p>
+            Organização de informações, indicadores,
+            acompanhamento de leads e análise de conversão.
+          </p>
+
+        </div>
+
+
+        <div class="detail-item">
+
+          <strong>
+            Ferramentas
+          </strong>
+
+          <p>
+            Excel, Google Sheets, Canva, PowerPoint,
+            Google Drive e GitHub.
+          </p>
+
+        </div>
+
+
+        <div class="detail-item">
+
+          <strong>
+            Tecnologia
+          </strong>
+
+          <p>
+            Formação em Análise e Desenvolvimento de Sistemas,
+            com aplicação de conhecimentos tecnológicos em projetos
+            de negócios e marketing.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTATO -->
+
+  <section id="contato" class="contact">
+
+    <div class="container">
+
+      <div class="contact-content">
+
+        <div class="section-label">
+          Contato
+        </div>
+
+        <h2>
+          Vamos conversar?
+        </h2>
+
+        <p>
+          Estou aberto a oportunidades e projetos relacionados
+          a marketing, negócios, comunicação e análise.
+        </p>
+
+        <div class="buttons"
+             style="justify-content:center;">
+
+          <a
+            href="mailto:gueirosisaque@gmail.com"
+            class="button button-dark">
+            gueirosisaque@gmail.com
+          </a>
+
+          <a
+            href="https://github.com/isaquegueirosx"
+            target="_blank"
+            class="button button-light">
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <span>
+        © 2026 Isaque Gueiros
+      </span>
+
+      <span>
+        Portfólio de Marketing
+      </span>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
+```
